@@ -1,0 +1,22 @@
+{
+  "name": "smart-deployer",
+  "version": "1.0.0",
+  "description": "Deployer with nodejs integration ",
+  "main": "bin/main.js",
+  "repository": "https://github.com/tofikhidayat/smart-deployer.git",
+  "author": "Tofik Hidayat <tofik@syntac.co.id>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node bin/main.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^4.0.0",
+    "express": "^4.17.1",
+    "github-webhook-middleware": "^0.0.2",
+    "log-to-file": "^2.0.2",
+    "mkdirp": "^1.0.4",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
+  }
+}
