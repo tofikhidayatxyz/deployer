@@ -1,16 +1,16 @@
  'use strict'
 
  const repositories = [
-     {
-         repo: 'tofikhidayat/byebyefever',
-         branch: '*',
-         timeout: 300,
-         commands: [
-            //  'cd /var/ && ls -a',
-            //  'ls -a',
-             'echo #{branch} #{repo}'
-         ] 
-     }
+    // {
+    //     repo: 'tofikhidayat/deployer',
+    //     branch: 'master',
+    //     timeout: 300,
+    //     commands: [
+    //         'cd /var/www/tofikhidayat/deployer && /root/.composer/vendor/bin/envoy run deploy'
+    //     ]
+    // },
  ]
 
+
  module.exports = repositories
+ 
