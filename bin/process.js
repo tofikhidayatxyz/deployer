@@ -10,7 +10,7 @@ const chalk = require('chalk')
 
 const { exec } = require('child_process');
 
-const startProcess = (repo, stat)  =>{
+const start = (repo, stat)  =>{
     repo.commands.forEach(itm => {
         let stringComand = itm.split('#{branch}').join(stat.branch)
             stringComand = stringComand.split('#{repo}').join(stat.repo)
@@ -30,4 +30,6 @@ const startProcess = (repo, stat)  =>{
         })
     })
 }
-module.exports = startProcess
+module.exports = {
+    start
+}

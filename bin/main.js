@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // router here
-app.post('/deployer/webhook/git', githubMiddleware, (req, res) => {
+app.post(config.path, githubMiddleware, (req, res) => {
     if (req.headers['x-github-event'] != 'push') return res.status(200).end()
 
     const payload = JSON.parse(req.body.payload)
@@ -31,12 +31,18 @@ app.post('/deployer/webhook/git', githubMiddleware, (req, res) => {
     const branch  = payload.ref.split('/').pop()
     console.log(repo)
     console.log(branch)
-    res.end()
-})
+    repositories.forEach(itm => {
+        if(itm.repo.toLowerCase() == repo.toLowerCase() && (itm.branch.toLowerCase() == branch.toLowerCase() || itm.branch == '*')) {
+            process.start(itm, {
+                repo,
+                branch
+            })
+        }
+    })
 
-process(repositories[0], {
-    branch:'master',
-    repo: 'tofikhidayat/deployer'
+    res.status(200)
+    res.send('ok')
+    res.end()
 })
 
 app.use((req, res) => {

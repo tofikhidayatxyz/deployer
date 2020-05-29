@@ -2,7 +2,7 @@
 
  const repositories = [
      {
-         name: 'tofikhidayat/smart-deployer',
+         repo: 'tofikhidayat/byebyefever',
          branch: '*',
          timeout: 300,
          commands: [
